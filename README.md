@@ -11,11 +11,11 @@ MHSPF(**M**icro**H**omologous **S**equences **P**airs **F**inder) is a simple to
 ## Installation
 
 ```bash
-git clone https://github.com/sc-zhang/MHSF.git
-cd MHSF/bin
+git clone https://github.com/sc-zhang/MHSPF.git
+cd MHSPF/bin
 chmod +x *.py
 # Optional, add follow line to your .bash_profile or .bashrc
-export PATH=/path/to/MHSF/bin:$PATH
+export PATH=/path/to/MHSPF/bin:$PATH
 ```
 
 ## Usage
