@@ -1,6 +1,6 @@
 ## Introduction
 
-MHSF(**M**icro**H**omologous **S**equences **F**inder) is a simple tool for searching MHSs from genome.
+MHSPF(**M**icro**H**omologous **S**equences **P**airs **F**inder) is a simple tool for searching 3-tuples MHS pairs from genome.
 
 ## Dependencies
 
@@ -104,7 +104,7 @@ Example:
 MHS_tuples.py -f MHS.freq -m MHS -l 500 -u 3000 -s 50 -o MHSs -t 10
 ```
 
-### Step 4. Get result table
+### Step 4. Get 3-tuple MHSs pairs table
 
 ```bash
 usage: construct_table.py [-h] -i INPUT -o OUTPUT
