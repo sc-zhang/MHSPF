@@ -6,8 +6,8 @@ import os
 def get_opts():
     group = argparse.ArgumentParser()
     group.add_argument('-i', '--input', help="Input directory", required=True)
-    group.add_argument('-c', '--count', help="Output count of most frequency MHS for each length, default=20", type=int,
-                       default=20)
+    group.add_argument('-c', '--count', help="Output count of most frequency MHS for each length, "
+                                             "default=20", type=int, default=20)
     group.add_argument('-o', '--output', help="Output statistic", required=True)
     return group.parse_args()
 
@@ -16,7 +16,7 @@ def most_freq(in_dir, cnt, out_fn):
     print("Loading MHS files")
     freq_db = {}
     for fn in os.listdir(in_dir):
-        print("\tLoading %s"%fn)
+        print("\tLoading %s" % fn)
         full_fn = os.path.join(in_dir, fn)
         with open(full_fn, 'r') as fin:
             for line in fin:
@@ -29,7 +29,7 @@ def most_freq(in_dir, cnt, out_fn):
                 if MHS not in freq_db[mhs_len]:
                     freq_db[mhs_len][MHS] = 0
                 freq_db[mhs_len][MHS] += mhs_cnt
-    
+
     print("Getting most frequency ones")
     with open(out_fn, 'w') as fout:
         fout.write("#MHS_len\tMHS_seq\tMHS_cnt\n")
@@ -39,7 +39,7 @@ def most_freq(in_dir, cnt, out_fn):
                 if len(set(list(MHS))) == 1:
                     continue
                 cur_cnt += 1
-                fout.write("%d\t%s\t%d\n"%(mhs_len, MHS, freq_db[mhs_len][MHS]))
+                fout.write("%d\t%s\t%d\n" % (mhs_len, MHS, freq_db[mhs_len][MHS]))
                 if cur_cnt > cnt:
                     break
 
